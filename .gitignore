@@ -1,0 +1,11 @@
+jupyternb/.ipynb_checkpoints/
+controller/minipupper/AUTHORS
+controller/minipupper/ChangeLog
+controller/minipupper/minipupper.egg-info/
+controller/minipupper/build/
+controller/minipupper/.eggs
+controller/minipupper/minipupper/__pycache__/
+controller/minipupper/minipupper/console/__pycache__/
+controller/minipupper/minipupper/executor/__pycache__/
+controller/minipupper/minipupper/pupper/__pycache__/
+controller/minipupper/minipupper/simulator/__pycache__/

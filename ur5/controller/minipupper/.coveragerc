@@ -1,0 +1,8 @@
+[run]
+branch = False
+source = minipupper
+
+[report]
+
+[html]
+title=minipupper unittests code coverage

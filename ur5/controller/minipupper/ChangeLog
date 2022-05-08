@@ -1,0 +1,23 @@
+CHANGES
+=======
+
+* added pybullet
+* fixed loop and time is now float
+* fixing bug in minipupper hardware driver
+* test if VIRTUAL\_ENV is defined
+* test if VIRTUAL\_ENV is defined
+* fixing install script for minipupper
+* renamed subdirectory
+* removed \_pycache\_\_ from git
+* more cleanup
+* cleanup
+* working in install script for raspberry pi
+* some cleanup
+* working on minipupper controller
+* fixed formating issue and changed variable names
+* finished 3-leg\_movement\_2d
+* fixed inverse kinematic function
+* working on leg\_movement\_2d
+* added urdf.ipynb
+* finished kinematics\_2d, start working on urdf
+* repo creation
