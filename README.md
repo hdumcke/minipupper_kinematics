@@ -1,22 +1,22 @@
 # Overview
 
-This repositiorie contains Jupyter notebook that I used to gain a better understanding of the kinematics of a quadruped robot in generate and <a href="https://github.com/mangdangroboticsclub/QuadrupedRobot">MangDang Minipupper</a> in particular.
+This repositories contains Jupyter notebook that I used to gain a better understanding of the kinematics of a quadruped robot in general and <a href="https://github.com/mangdangroboticsclub/QuadrupedRobot">MangDang Minipupper</a> in particular.
 
-We cover the mathematics for 2D and 3D movements and develop different gaits for the robot. The Jupyter notebooks contain that will illustrate the theoretical background. But theory and reality do not always match. We provide an execution environment that can be installed on a Minipupper so that we can upload leg trajectories to th ephysical robot and have them executed.
+We cover the mathematics for 2D and 3D movements and develop different gaits for the robot. The Jupyter notebooks contain that will illustrate the theoretical background. But theory and reality do not always match. We provide an execution environment that can be installed on a Minipupper so that we can upload leg trajectories to the physical robot and have them executed.
 
 # Content
 
 - Kinematics and Inverse kinematics of a two link manipulator (robot leg in 2D)
 - Some discussion of URDF (Unified Robot Description Format)
-- 2D leg movement, simulated and exectuted in the physical robot
+- 2D leg movement, simulated and executed in the physical robot
 - Discussion of movement in 3D
 - Kinematics and Inverse kinematics of a three link manipulator (robot leg in 3D)
-- 3D leg movement, simulated and exectuted in the physical robot
+- 3D leg movement, simulated and executed in the physical robot
 - Simulation of physics. Gravity is a reality
 
-## Installation of the development environmet
+## Installation of the development environment
 
-The goal is to focus on portable Python code to be able to run it in any Python virtual environment. We make heavy use of <a href="https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906">Jupyer Lab</a>
+The goal is to focus on portable Python code to be able to run it in any Python virtual environment. We make heavy use of <a href="https://blog.jupyter.org/jupyterlab-is-ready-for-users-5a6f039b8906">Jupyter Lab</a>
 
 - Clone this repository
 - Create a Python virtual environment
@@ -32,7 +32,7 @@ git checkout -b dev main
 
 For more details checkout <a href="https://mg.readthedocs.io/git-jupyter.html">Jupyter Notebooks in a Git Repository</a>
 
-## Installation of the simulation environmet
+## Installation of the simulation environment
 
 You must run in a Python virtual environment.
 
