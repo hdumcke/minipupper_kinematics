@@ -12,6 +12,7 @@ We cover the mathematics for 2D and 3D movements and develop different gaits for
 - Discussion of movement in 3D
 - Kinematics and Inverse kinematics of a three link manipulator (robot leg in 3D)
 - 3D leg movement, simulated and executed in the physical robot
+- Robot pose
 - Simulation of physics. Gravity is a reality
 
 ## Installation of the development environment
@@ -47,7 +48,7 @@ Use a SD card that has been configured with  <a href="https://github.com/hdumcke
 - Clone this repository
 - cd into the controller directory within this repository
 - run ./install.sh
-- minipupper execute -l 3 -t 0.5 # adjust parameters for your use case
+- minipupper walk # adjust parameters for your use case
 
 ## Develop your own feet trajectories
 

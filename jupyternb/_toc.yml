@@ -1,0 +1,12 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+chapters:
+- file: 1-kinematics_2d
+- file: 2-urdf
+- file: 3-leg_movement_2d
+- file: 3.1-minipupper
+- file: 3.2-bezier_curve
+- file: 3.3-gaits-2d

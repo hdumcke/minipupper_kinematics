@@ -1,5 +1,7 @@
+bezier
 ipympl
 ipython
+jupyter-book
 jupyterlab
 jupyterlab-widgets
 matplotlib

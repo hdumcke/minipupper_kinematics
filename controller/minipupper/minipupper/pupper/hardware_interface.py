@@ -17,12 +17,17 @@ class Servo:
         for joint in CONF.joints:
             self.joint_names[CONF.joints[joint]] = joint
 
-    def set_servo_position(self, angle, axis, leg):
-        # Minipupper uses an angle offset for the upper leg
-        minipupper_offset = 0
-        if axis == 1:
-            minipupper_offset = np.pi/2
+    def mp_angle(self, angle):
+        return -np.pi/2 - angle
 
-        angle = angle - minipupper_offset
+    def set_servo_position(self, angle, axis, leg, mp_angle):
+        # Minipupper uses an angle offset for the upper leg
+        if axis == 1:
+            # we have to change lower leg servo
+            self.hardware_interface.set_actuator_position(self.mp_angle(mp_angle), 2, leg)
+            angle = self.mp_angle(angle)
+        if axis == 2:
+            angle = self.mp_angle(mp_angle)
+
         logger.debug("setting %s_%s to %.2f [degree]" % (self.leg_names[leg], self.joint_names[axis], np.degrees(angle)))
         self.hardware_interface.set_actuator_position(angle, axis, leg)

@@ -4,7 +4,14 @@ minipupper:
     servos_dir: ../servos
 
 
-# this is realed to Mangdang.minipupper.HardwareInterface, to not touch
+# this is related to Mangdang.minipupper.HardwareInterface, to not touch
+upper_leg_length: 0.05022511821787979 # from urdf
+lower_leg_length: 0.065 # measured, includes the rubber foot
+lower_leg_extension_length: 0.015 # measured
+servo_link_length: 0.0175 # measured
+servo_arm_length: 0.0125 # measured
+servo_delta_x: 0.0105 # measured
+servo_delta_y: 0.0125 # measured
 legs:
     rf: 0
     lf: 1

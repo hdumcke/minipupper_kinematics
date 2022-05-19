@@ -12,8 +12,6 @@ except ImportError:
 def get_config(name):
     if 'VIRTUAL_ENV' in os.environ:
         default_filenames = [
-            # DEV
-            "%s/etc/%s/%s.yaml" % (os.path.dirname(os.path.dirname(__file__)), name, name),
             # VIRTUAL_ENV
             "%s/etc/%s/%s.yaml" % (os.environ['VIRTUAL_ENV'], name, name),
             # SYSTEM

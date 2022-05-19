@@ -6,6 +6,7 @@ BASEDIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 # we test is the MangDang python module is installed
 # if it is we assume we are running on a physical minipupper otherwise we use pybullet
 if (pip freeze | grep Mangdang > /dev/null)  ; then
+    sudo BEZIER_NO_EXTENSION=true pip install bezier --no-binary=bezier
     sudo cp -r $BASEDIR/minipupper/etc/minipupper /etc
     sudo sed -i "s|servos_dir: ../servos|servos_dir: $BASEDIR/servos|" /etc/minipupper/minipupper.yaml
     sudo sed -i "s|simulator|minipupper|" /etc/minipupper/minipupper.yaml
@@ -16,6 +17,8 @@ else
     # we assume we are running in a virtual environment
     cp -r $BASEDIR/minipupper/etc/minipupper $VIRTUAL_ENV/etc/
     cp $BASEDIR/../minipupper_description/urdf/minipupper.urdf $VIRTUAL_ENV/etc/minipupper
+    cp -r $BASEDIR/../minipupper_description/meshes $VIRTUAL_ENV/etc/minipupper
+    sed -i "s|package://minipupper_description|.|" $VIRTUAL_ENV/etc/minipupper/minipupper.urdf
     sudo sed -i "s|servos_dir: ../servos|servos_dir: $BASEDIR/servos|" $VIRTUAL_ENV/etc/minipupper/minipupper.yaml
     pip install $BASEDIR/minipupper
 fi

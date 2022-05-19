@@ -3,6 +3,7 @@ import time
 import numpy as np
 
 from minipupper import CONF
+from minipupper.pupper.leg import LegController
 
 if CONF.minipupper.environment == 'simulator':
     from minipupper.simulator.hardware_interface import Servo
@@ -55,6 +56,7 @@ class Servos:
     def __init__(self, angles):
         self.angles = angles
         self.hardware_interface = Servo()
+        self.leg_controller = LegController()
         if CONF.minipupper.environment == 'simulator':
             self.simulator = Simulator(self.hardware_interface)
 
@@ -88,14 +90,23 @@ class Servos:
                 axis = (it.index - 4*leg) % 3
                 joints_to_update.append({'axis': axis,
                                          'leg': leg,
-                                         'angle': angles[leg][axis]
+                                         'angle': angles[leg][axis],
+                                         'all_angles': angles[leg]
                                         })
 
         self._set_servos(joints_to_update)
 
     def _set_servos(self, joints_to_update):
         for joint in joints_to_update:
-            self.hardware_interface.set_servo_position(joint['angle'], joint['axis'], joint['leg'])
+            self.leg_controller.check_angles(joint['leg'], joint['all_angles'])
+            if CONF.minipupper.environment == 'simulator':
+                mp_angle = None
+            else:
+                mp_angle = self.leg_controller.get_minipupper_servo_angle(joint['all_angles'])
+            self.hardware_interface.set_servo_position(joint['angle'],
+                                                       joint['axis'],
+                                                       joint['leg'],
+                                                       mp_angle)
 
         #TODO This is not real time programming
         if CONF.minipupper.environment == 'simulator':
