@@ -1,5 +1,0 @@
-daiquiri
-click
-pyyaml
-munch
-numpy

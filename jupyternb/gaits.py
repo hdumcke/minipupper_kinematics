@@ -22,10 +22,10 @@ class GaitController:
                                          [0.0, self.step_height/0.75, self.step_height/0.75, 0.0]
                                         ])
         self.v_adj = np.array(self._adjust_velocity())
-        self.support_phase = np.zeros((2, number_of_points))
-        self.support_phase[0] = self._support_phase()
+        self.stance_phase = np.zeros((2, number_of_points))
+        self.stance_phase[0] = self._stance_phase()
         self.swing_phase = self._swing_phase()
-        self.trajectory = np.concatenate((self.support_phase, self.swing_phase), axis=1)
+        self.trajectory = np.concatenate((self.stance_phase, self.swing_phase), axis=1)
         self.lu = 0.05022511821787979  # from urdf
         self.ll = 0.065                # measured, includes the rubber foot
 
@@ -33,7 +33,7 @@ class GaitController:
         times = np.linspace(0, 1, num=self.number_of_points)
         return [((np.exp(self.velocity_adapt) + 1)/(np.exp(self.velocity_adapt) - 1))*(1/(np.exp(-2*self.velocity_adapt*(t-1/2))+1) - 1/(np.exp(self.velocity_adapt) + 1)) for t in times]
 
-    def _support_phase(self):
+    def _stance_phase(self):
         return self.step_length/2 - self.step_length * self.v_adj
 
     def _swing_phase(self):

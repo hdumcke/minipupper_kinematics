@@ -1,9 +1,0 @@
-ipympl
-ipython
-jupyterlab
-jupyterlab-widgets
-matplotlib
-numpy
-spatialmath-python
-sympy
-urdfpy

@@ -1,2 +1,0 @@
-[console_scripts]
-minipupper = minipupper.console.cli:minipupper
