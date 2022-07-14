@@ -52,7 +52,7 @@ Use a SD card that has been configured with  <a href="https://github.com/hdumcke
 - reboot
 - point your web browser at http://xx.xx.xx.xx:8080 where xx.xx.xx.xx is the IP address of your minipupper
 
-For development your can also:
+For development you can also:
 
 - run "minipupper execute --help"
 - run "minipupper walk" and adjust parameters for your use case
