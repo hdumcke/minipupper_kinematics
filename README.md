@@ -59,7 +59,7 @@ For development your can also:
 
 ## To Do
 
-- This is work in progress, we have to pine tune gait parameters and and develop a mode where we change gaits as a function of the velocity
+- This is work in progress, we have to fine tune gait parameters and to develop a mode where we change gaits as a function of the velocity
 - Compete the jupyter notebooks
 - Integrate with ROS2
 - Quadruped movement is still on-going research, there are many interesting issues to look at. This is open source and you can do your own research.
