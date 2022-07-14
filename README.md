@@ -46,9 +46,9 @@ For more details checkout <a href="https://mg.readthedocs.io/git-jupyter.html">J
 
 Use a SD card that has been configured with  <a href="https://github.com/hdumcke/minipupper_base">minipupper_base</a> Use Ubuntu 22.04 as this is the only version we have tested with so far.
 
-- Clone this repository
-- cd into the repository
-- run ./install.sh
+- Clone this repository with git clone https://github.com/hdumcke/minipupper_kinematics.git
+- ./minipupper_kinematics/install.sh 
+- If the intstall script hangs at "systemctl restart plymouth.service" kill the script and run it again until it fully completes
 - reboot
 - point your web browser at http://xx.xx.xx.xx:8080 where xx.xx.xx.xx is the IP address of your minipupper
 
