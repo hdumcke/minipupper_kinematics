@@ -6,6 +6,8 @@ jupyterlab
 jupyterlab-widgets
 matplotlib
 numpy
+pydot
+pytransform3d
 spatialmath-python
 sympy
 urdfpy

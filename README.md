@@ -21,9 +21,13 @@ The goal is to focus on portable Python code to be able to run it in any Python 
 
 - Clone this repository
 - Create a Python virtual environment
-- cd into the jupyternb directory within this repository
-- pip install -r requirements.txt
-- start Jupyter lab with "jupyter lab ."
+- cd into the repository
+- run "./install.sh"
+
+### Use the development environment
+
+- cd into the repository
+- start Jupyter lab with "jupyter lab jupyternb"
 
 ### A note on Jupyter notebooks and Git
 
@@ -33,31 +37,30 @@ git checkout -b dev main
 
 For more details checkout <a href="https://mg.readthedocs.io/git-jupyter.html">Jupyter Notebooks in a Git Repository</a>
 
-## Installation of the simulation environment
+### Use the simulation environment
 
-You must run in a Python virtual environment.
-
-- cd into the controller directory within this repository
-- run ./install.sh
-- run "minipupper execute --help"
+- run "minipupper --help" for instructions on how to use this command
+- run "web-controller" and point your browser at the URL shown on the screen
 
 ## Installation on Minipupper
 
-Use a SD card that has been configured with  <a href="https://github.com/hdumcke/minipupper_base">minipupper_base</a>
+Use a SD card that has been configured with  <a href="https://github.com/hdumcke/minipupper_base">minipupper_base</a> Use Ubuntu 22.04 as this is the only version we have tested with so far.
 
 - Clone this repository
-- cd into the controller directory within this repository
+- cd into the repository
 - run ./install.sh
-- minipupper walk # adjust parameters for your use case
+- reboot
+- point your web browser at http://xx.xx.xx.xx:8080 where xx.xx.xx.xx is the IP address of your minipupper
 
-## Develop your own feet trajectories
+For development your can also:
 
-- create your jupyter notebook based on the examples in this repo. Write the joint angles to a file. Do this for all 12 joints.
-- test in the simulation environment
-- scp joint angle files to your minipupper. The directory where these files are expected can be configured in /etc/minipupper/minipupper.yaml
+- run "minipupper execute --help"
+- run "minipupper walk" and adjust parameters for your use case
 
 ## To Do
 
-- This is work in progress and not all modules are yet developed.
-- So far we reduce foot movement to 2D, hips will not move. 3D will come next.
+- This is work in progress, we have to pine tune gait parameters and and develop a mode where we change gaits as a function of the velocity
+- Compete the jupyter notebooks
+- Integrate with ROS2
+- Quadruped movement is still on-going research, there are many interesting issues to look at. This is open source and you can do your own research.
 

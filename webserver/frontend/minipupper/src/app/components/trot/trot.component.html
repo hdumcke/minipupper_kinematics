@@ -1,0 +1,21 @@
+<mat-card class="trot-card">
+  <mat-card-content>
+    <h1>Trot (x: {{velx}}&#x25;, y: {{vely}}&#x25;)</h1>
+    <mat-slider (input)="onChange('vel_x', $event.value)" vertical min="-100" max="100" step="1" [(value)]="velx" thumbLabel=True></mat-slider>
+    <mat-slider (input)="onChange('vel_y', $event.value)" min="-100" max="100" step="1" [(value)]="vely" thumbLabel=True></mat-slider>
+    <p>
+      <mat-button-toggle-group (change)="onClick($event.value)" name="fontStyle" aria-label="Font Style" #group="matButtonToggleGroup">
+        <mat-button-toggle value="start">Start</mat-button-toggle>
+        <mat-button-toggle value="stop">Stop</mat-button-toggle>
+      </mat-button-toggle-group>
+    </p>
+    <h3>Frequency: {{freq}} Hz</h3>
+    <mat-slider (input)="onChange('freq', $event.value)" min="30" max="240" step="1" [(value)]="freq" thumbLabel=True></mat-slider>
+    <h3>Step Length: {{stepl}} mm</h3>
+    <mat-slider (input)="onChange('step_l', $event.value)" min="1" max="10" step="1" [(value)]="stepl" thumbLabel=True></mat-slider>
+    <h3>Step Height: {{steph}} mm</h3>
+    <mat-slider (input)="onChange('step_h', $event.value)" min="1" max="10" step="1" [(value)]="steph" thumbLabel=True></mat-slider>
+    <h3>Number of Points: {{nump}}</h3>
+    <mat-slider (input)="onChange('number_of_points', $event.value)" min="5" max="50" step="1" [(value)]="nump" thumbLabel=True></mat-slider>
+  </mat-card-content>
+</mat-card>

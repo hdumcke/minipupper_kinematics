@@ -1,0 +1,20 @@
+<mat-card class="wobble-card">
+  <mat-card-content>
+    <h1>Wobble</h1>
+    <h2>Roll: {{roll}}&deg;</h2>
+    <mat-slider (input)="onChange('roll', $event.value)" min="-10" max="10" step="1" [(value)]="roll" thumbLabel=True></mat-slider>
+    <h2>Pitch: {{pitch}}&deg;</h2>
+    <mat-slider (input)="onChange('pitch', $event.value)" min="-10" max="10" step="1" [(value)]="pitch" thumbLabel=True></mat-slider>
+    <h2>Yaw: {{yaw}}&deg;</h2>
+    <mat-slider (input)="onChange('yaw', $event.value)" min="-10" max="10" step="1" [(value)]="yaw" thumbLabel=True></mat-slider>
+    <h2>Height: {{height}} mm</h2>
+    <mat-slider (input)="onChange('height', $event.value)" min="-20" max="20" step="1" [(value)]="height" thumbLabel=True></mat-slider>
+    <p>
+      <mat-button-toggle-group (change)="onClick($event.value)" name="fontStyle" aria-label="Font Style" #group="matButtonToggleGroup">
+        <mat-button-toggle value="start">Start</mat-button-toggle>
+        <mat-button-toggle value="stop">Stop</mat-button-toggle>
+      </mat-button-toggle-group>
+    </p>
+  </mat-card-content>
+  <img mat-card-image src="img/rpy.png" alt="rpy image">
+</mat-card>

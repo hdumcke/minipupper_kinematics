@@ -10,3 +10,8 @@ chapters:
 - file: 3.1-minipupper
 - file: 3.2-bezier_curve
 - file: 3.3-gaits-2d
+- file: 4-3D_coordinate_system
+- file: 5-kinematics_3d
+- file: 5.1-gaits_revisited
+- file: 6-Simulation
+- file: 7-Frameworks

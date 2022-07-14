@@ -1,0 +1,19 @@
+.mat-slider-vertical {
+  height: 250px;
+}
+
+.mat-slider-horizontal {
+  width: 250px;
+}
+
+.mat-card + .mat-card {
+  margin-top: 8px 16px;
+}
+
+.wobble-card h1 {
+  margin: 0 8px 16px;
+}
+
+.wobble-card h2 {
+  margin: 0 8px;
+}

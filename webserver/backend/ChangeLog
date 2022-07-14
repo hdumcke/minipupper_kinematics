@@ -1,0 +1,58 @@
+CHANGES
+=======
+
+* fixed neutral position for minipupper
+* updated frontend to be in sync with backend
+* WIP
+* fixes lower leg angle for minipupper
+* added speed component
+* WIP
+* WIP
+* working on simulator
+* WIP
+* WIP
+* added image to wobble
+* added github and help link to web page
+* WIP
+* added supervisor
+* WIP
+* WIP
+* WIP
+* WIP
+* working on web server installation
+* added webserver backend and frontend
+* WIP
+* working on urdf file
+* changed mini\_pupper\_description
+* WIP
+* minor documentation udates
+* add documentation, prepare public release
+* updated README
+* added walk rotation and forward
+* added minipupper walk command
+* added more test positions
+* fixed minipupper angle transformation
+* testing on minipupper
+* fixed missing bracket
+* ready for testing on minipupper
+* updated for first public release
+* added pybullet
+* fixed loop and time is now float
+* fixing bug in minipupper hardware driver
+* test if VIRTUAL\_ENV is defined
+* test if VIRTUAL\_ENV is defined
+* fixing install script for minipupper
+* renamed subdirectory
+* removed \_pycache\_\_ from git
+* more cleanup
+* cleanup
+* working in install script for raspberry pi
+* some cleanup
+* working on minipupper controller
+* fixed formating issue and changed variable names
+* finished 3-leg\_movement\_2d
+* fixed inverse kinematic function
+* working on leg\_movement\_2d
+* added urdf.ipynb
+* finished kinematics\_2d, start working on urdf
+* repo creation

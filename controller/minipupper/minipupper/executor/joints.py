@@ -26,8 +26,12 @@ class Reader:
         movement = {}
         self.max_steps = 0
 
+        # We play around with names as we srated with a different URDF file with different naming convention
+        trans_leg = { 'rf': 'rf', 'rb': 'rh', 'lf': 'lf', 'lb': 'lh'}
+        trans_joint = { '1': '_hip', '2': '_upper_leg', '3': '_lower_leg'}
         for leg in self.legs.keys():
             for joint in self.joints.keys():
+                # name = "%s%s" % (trans_leg[leg], trans_joint[str(joint)])
                 name = "%s_%s" % (leg, joint)
                 fn = "%s/%s" % (self.servos_dir, name)
                 movement[name] = []
@@ -40,6 +44,7 @@ class Reader:
 
         for leg in self.legs.keys():
             for joint in self.joints.keys():
+                # name = "%s%s" % (trans_leg[leg], trans_joint[str(joint)])
                 name = "%s_%s" % (leg, joint)
                 for step in range(self.max_steps):
                     self.angles[self.legs[leg]][self.joints[joint]][step] = movement[name][step % len(movement[name])]

@@ -1,9 +1,15 @@
 #!/bin/bash
 
-rm -rf docs/*
-jupyter-book build jupyternb --path-output docs
-mv docs/_build/html/* docs/
-jupyter-book build jupyternb --path-output docs --builder pdflatex
-mv docs/_build/latex/book.pdf docs
-rm -rf docs/_build/
-rm -rf docs/_sources/
+### Get directory where this script is installed
+BASEDIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
+
+rm -rf $BASEDIR/docs/*
+jupyter-book build $BASEDIR/jupyternb --path-output docs
+mv $BASEDIR/docs/_build/html/* $BASEDIR/docs/
+jupyter-book build $BASEDIR/jupyternb --path-output docs --builder pdflatex
+mv $BASEDIR/docs/_build/latex/book.pdf $BASEDIR/docs
+rm -rf $BASEDIR/docs/_build/
+rm -rf $BASEDIR/docs/_sources/
+
+# set servo angles to pushup
+cp $BASEDIR/controller/servos/pushup/* $BASEDIR/controller/servos/

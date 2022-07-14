@@ -8,6 +8,11 @@ controller/minipupper/minipupper/console/__pycache__/
 controller/minipupper/minipupper/executor/__pycache__/
 controller/minipupper/minipupper/pupper/__pycache__/
 controller/minipupper/minipupper/simulator/__pycache__/
+webserver/backend/backend/__pycache__
+webserver/backend/backend/controller/__pycache__
+webserver/backend/.eggs/
+webserver/backend/backend.egg-info/
+webserver/backend/build/
 
 jupyternb/.ipynb_checkpoints/
 jupyternb/__pycache__/

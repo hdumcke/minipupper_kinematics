@@ -35,7 +35,7 @@ class Simulator:
         camPitch = -16
         p.resetDebugVisualizerCamera(camDist, camYaw, camPitch, camTargetPos)
         p.setRealTimeSimulation(0)
-        self.pupper = p.loadURDF("%s/etc/minipupper/minipupper.urdf" % os.environ['VIRTUAL_ENV'],
+        self.pupper = p.loadURDF("%s/etc/minipupper/mini-pupper.urdf" % os.environ['VIRTUAL_ENV'],
                             startPos, startOrientation) 
 
         jointTypeNames = {}
@@ -57,9 +57,21 @@ class Simulator:
         p.resetBasePositionAndOrientation(self.pupper, startPos, startOrientation)
 
 
+    def get_joint_name(self, joint_position):
+        if '1' in joint_position:
+            return "base_%s" % joint_position
+        if '2' in joint_position:
+            return "%s_%s" % (joint_position.replace('2', '1'), joint_position)
+        if '3' in joint_position:
+            return "%s_%s" % (joint_position.replace('3', '2'), joint_position)
+
+        return "UNKNOWN"
+
+
     def step(self):
         for f in self.hardware_interface.joint_pos.keys():
             p.setJointMotorControl2(self.pupper,
+                                   #self.jointNamesToIndex[self.get_joint_name(f)],
                                    self.jointNamesToIndex["%s_joint" % f],
                                    p.POSITION_CONTROL,
                                    targetPosition = self.hardware_interface.joint_pos[f],
